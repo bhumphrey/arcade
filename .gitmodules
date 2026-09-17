@@ -1,0 +1,9 @@
+[submodule "games/dronehunt"]
+	path = games/dronehunt
+	url = https://github.com/bhumphrey/dronehunt.git
+[submodule "games/datacenterseige"]
+	path = games/datacenterseige
+	url = https://github.com/bhumphrey/datacenterseige.git
+[submodule "games/liar-liar"]
+	path = games/liar-liar
+	url = https://github.com/bhumphrey/liar-liar.git

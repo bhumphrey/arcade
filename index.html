@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arcade</title>
+<meta name="description" content="Pick a cartridge, load it into the console, play.">
+<meta name="theme-color" content="#121016">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="marquee">
+    <h1>ARCADE</h1>
+    <p>Pick a cartridge. Blow on it if it doesn't work.</p>
+  </header>
+
+  <main class="stage">
+    <section class="tv" aria-live="polite">
+      <div class="tv-screen" id="screen">
+        <canvas class="tv-rain" id="rain" aria-hidden="true"></canvas>
+        <div class="tv-picture" id="picture">
+          <div class="tv-text" id="screenText"></div>
+          <div class="tv-static" id="static"></div>
+        </div>
+      </div>
+      <div class="tv-knobs"><i></i><i></i></div>
+    </section>
+
+    <div class="console" id="console">
+      <div class="console-rear" id="consoleRear">
+        <div class="slot" id="slot"></div>
+        <div class="lid" id="lid"><div class="lid-face lid-outer"></div><div class="lid-face lid-inner"></div></div>
+      </div>
+      <div class="console-front">
+        <span class="brand">RES</span>
+        <span class="power">
+          <span class="led" id="led"></span>
+          <button class="power-btn" id="power" type="button" aria-label="Power">POWER</button>
+        </span>
+        <span class="vents"></span>
+      </div>
+    </div>
+  </main>
+
+  <section class="shelf" aria-label="Cartridges">
+    <ul class="carts" id="carts"></ul>
+    <div class="shelf-board"></div>
+  </section>
+
+  <footer class="fine">Plug in a cartridge, then press POWER. Use your browser's back button to return from a game.</footer>
+
+  <template id="cartTemplate">
+    <li>
+      <a class="cart">
+        <span class="cart-ridges"></span>
+        <span class="cart-label">
+          <canvas class="cart-art" width="12" height="12"></canvas>
+          <span class="cart-title"></span>
+          <span class="cart-tagline"></span>
+        </span>
+      </a>
+    </li>
+  </template>
+
+  <script src="games.js"></script>
+  <script src="arcade.js"></script>
+</body>
+</html>
