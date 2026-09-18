@@ -7,3 +7,6 @@
 [submodule "games/liar-liar"]
 	path = games/liar-liar
 	url = https://github.com/bhumphrey/liar-liar.git
+[submodule "games/patriot"]
+	path = games/patriot
+	url = https://github.com/bhumphrey/patriot.git
