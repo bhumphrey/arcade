@@ -10,3 +10,6 @@
 [submodule "games/patriot"]
 	path = games/patriot
 	url = https://github.com/bhumphrey/patriot.git
+[submodule "games/cateringone"]
+	path = games/cateringone
+	url = https://github.com/bhumphrey/cateringone.git
