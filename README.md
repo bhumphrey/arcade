@@ -34,6 +34,22 @@ git submodule update --remote
 git commit -am "Update games"
 ```
 
+## Hosting
+
+The site is published to Cloudflare Workers (static assets) on the free tier. Pushing to
+`main` runs [.github/workflows/deploy.yml](.github/workflows/deploy.yml), which checks out the
+games, runs `./build.sh` to stage the site into `dist/`, and deploys it:
+
+| | |
+| --- | --- |
+| Build command | `./build.sh` (add `git submodule update --init --recursive &&` in front of it if the build runs on Cloudflare) |
+| Deploy command | `npx wrangler deploy` |
+| Settings | [wrangler.jsonc](wrangler.jsonc); response headers in [_headers](_headers) |
+| Secrets | `CLOUDFLARE_API_TOKEN` (Edit Cloudflare Workers), `CLOUDFLARE_ACCOUNT_ID` |
+
+`dist/` is staged rather than publishing the folder as is, so that no `.git` bookkeeping from
+the game submodules gets uploaded.
+
 ## Add a game
 
 Add the game's repo as a submodule under `games/`:

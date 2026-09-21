@@ -1,0 +1,12 @@
+// Cloudflare Workers static assets: dist/ is served as plain files, with no Worker
+// script. Build it with ./build.sh, then deploy with `npx wrangler deploy`.
+{
+  "name": "arcade",
+  "compatibility_date": "2026-09-21",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist/",
+    // games/<id>/ serves that folder's index.html
+    "html_handling": "auto-trailing-slash"
+  }
+}
